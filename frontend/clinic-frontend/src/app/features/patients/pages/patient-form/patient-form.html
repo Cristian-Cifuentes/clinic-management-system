@@ -1,0 +1,28 @@
+<h2>Formulario de Paciente</h2>
+<form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Nombre:</label>
+    <input formControlName="name" />
+  </div>
+
+  <div>
+    <label>Edad:</label>
+    <input type="number" formControlName="age" />
+  </div>
+
+  <div>
+    <label>Género:</label>
+    <select formControlName="gender">
+      <option value="">Seleccione</option>
+      <option value="M">Masculino</option>
+      <option value="F">Femenino</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Dirección:</label>
+    <input formControlName="address" />
+  </div>
+
+  <button type="submit">Guardar</button>
+</form>

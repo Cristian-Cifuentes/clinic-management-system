@@ -1,0 +1,24 @@
+<h2>Lista de Doctores</h2>
+
+<div *ngIf="isLoading">Cargando...</div>
+
+<table *ngIf="!isLoading && doctors.length > 0" border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Especialidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doctor of doctors">
+      <td>{{ doctor.id }}</td>
+      <td>{{ doctor.name }}</td>
+      <td>{{ doctor.specialty }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!isLoading && doctors.length === 0">
+  No se encontraron doctores.
+</div>

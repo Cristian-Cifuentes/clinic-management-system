@@ -1,0 +1,15 @@
+<h2>Registrar Doctor</h2>
+
+<form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Nombre:</label>
+    <input id="name" type="text" formControlName="name" />
+  </div>
+
+  <div>
+    <label for="specialty">Especialidad:</label>
+    <input id="specialty" type="text" formControlName="specialty" />
+  </div>
+
+  <button type="submit" [disabled]="doctorForm.invalid">Registrar</button>
+</form>
