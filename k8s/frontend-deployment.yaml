@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clinic-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clinic-frontend
+  template:
+    metadata:
+      labels:
+        app: clinic-frontend
+    spec:
+      containers:
+        - name: clinic-frontend
+          image: gcr.io/clinica-miumg/clinic-frontend:latest
+          ports:
+            - containerPort: 80
